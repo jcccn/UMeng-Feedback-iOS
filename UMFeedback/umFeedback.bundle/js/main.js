@@ -167,15 +167,24 @@ $(document).ready(function () {
     };
 
     setViewport();
-    $('#cancelUserDashBoard').click(function () {
+    $('#cancelUserDashBoard').bind("touchstart", function () {
         $('#userDashBoard').modal('hide');
     });
-    $('#backBtn').click(function () {
+    $('#backBtn').bind("touchstart", function(){
         location.href = 'umengjscall:dismissumengjscall:';
     });
-    $('#wrapper').click(function () {
+    $('#wrapper').bind("touchstart", function () {
         $('input:focus').blur();
         return false;
+    });
+    $('#sendBtn_cn').bind("touchstart", function() {
+        submitForm('zh-Hans');
+    });
+    $('#sendBtn_en').bind("touchstart", function() {
+        submitForm('en');
+    });
+    $('#sendBtn_ja').bind("touchstart", function() {
+        submitForm('ja');
     });
 });
 
